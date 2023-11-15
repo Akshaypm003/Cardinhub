@@ -1,12 +1,23 @@
-
 import './App.css'
+import Home from './components/Home'
+import Shop from './components/Shop'
+import Layout from "./components/layout"
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+
 
 function App() {
   
 
   return (
     <>
-      <h1 className='text-primary'>hii</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout/>} >
+            <Route path='/' element={<Home/>} />
+            <Route path='shop' element={<Shop/>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
